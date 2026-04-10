@@ -1,0 +1,22 @@
+{
+  "name": "ga-mcp",
+  "version": "0.1.0",
+  "description": "Google Analytics 4 MCP Server",
+  "type": "module",
+  "bin": {
+    "ga-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "googleapis": "^144.0.0",
+    "open": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.5.0"
+  }
+}

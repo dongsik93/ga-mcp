@@ -85,6 +85,18 @@ npx -y @dongsik/ga4-mcp
 
 > Windows의 경우 경로 예시: `"C:\\Users\\사용자명\\client_secret.json"`
 
+### Claude Code (CLI)
+
+```bash
+claude mcp add ga4 -- npx -y @dongsik/ga4-mcp
+```
+
+환경변수 설정:
+
+```bash
+claude mcp add ga4 -e GA_CLIENT_SECRET_PATH=/path/to/client_secret.json -e GA4_PROPERTY_ID=123456789 -- npx -y @dongsik/ga4-mcp
+```
+
 ### 환경변수
 
 | 변수 | 필수 | 설명 |

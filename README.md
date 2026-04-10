@@ -85,6 +85,18 @@ Add to your `claude_desktop_config.json`:
 
 > Windows path example: `"C:\\Users\\username\\client_secret.json"`
 
+### Claude Code (CLI)
+
+```bash
+claude mcp add ga4 -- npx -y @dongsik/ga4-mcp
+```
+
+Set environment variables:
+
+```bash
+claude mcp add ga4 -e GA_CLIENT_SECRET_PATH=/path/to/client_secret.json -e GA4_PROPERTY_ID=123456789 -- npx -y @dongsik/ga4-mcp
+```
+
 ### Environment Variables
 
 | Variable | Required | Description |

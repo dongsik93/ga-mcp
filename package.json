@@ -1,10 +1,10 @@
 {
-  "name": "ga-mcp",
+  "name": "@dongsik/ga4-mcp",
   "version": "0.1.0",
   "description": "Google Analytics 4 MCP Server",
   "type": "module",
   "bin": {
-    "ga-mcp": "./dist/index.js"
+    "ga4-mcp": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",

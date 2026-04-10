@@ -1,8 +1,14 @@
-# ga-mcp
+# ga4-mcp
+
+[![npm](https://img.shields.io/npm/v/@dongsik/ga4-mcp)](https://www.npmjs.com/package/@dongsik/ga4-mcp)
 
 [한국어](docs/README.ko.md)
 
 An MCP server for querying and analyzing Google Analytics 4 data directly from Claude Desktop.
+
+```bash
+npx -y @dongsik/ga4-mcp
+```
 
 ## Features
 
@@ -67,7 +73,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "ga": {
       "command": "npx",
-      "args": ["-y", "ga-mcp"],
+      "args": ["-y", "@dongsik/ga4-mcp"],
       "env": {
         "GA_CLIENT_SECRET_PATH": "/path/to/client_secret.json",
         "GA4_PROPERTY_ID": "123456789"

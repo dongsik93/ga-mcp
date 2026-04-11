@@ -1,7 +1,8 @@
 {
   "name": "@dongsik/ga4-mcp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Google Analytics 4 MCP Server",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "ga4-mcp": "dist/index.js"

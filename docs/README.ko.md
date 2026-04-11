@@ -59,8 +59,15 @@ npx -y @dongsik/ga4-mcp
 1. [Google Cloud Console](https://console.cloud.google.com/)에서 프로젝트 생성 또는 선택
 2. **APIs & Services → Library** → "Google Analytics Data API" 활성화
 3. **APIs & Services → Library** → "Google Analytics Admin API" 활성화
-4. **APIs & Services → Credentials** → **OAuth 2.0 Client ID** 생성 (유형: Desktop app)
-5. JSON 다운로드 → `client_secret.json`으로 저장
+4. **APIs & Services → OAuth 동의 화면** → 사용자 유형 **외부** 선택, 테스트 사용자에 본인 Google 계정 추가
+5. **APIs & Services → Credentials** → **OAuth 2.0 Client ID** 생성 (유형: Desktop app)
+6. JSON 다운로드 → 이 파일이 `client_secret.json`
+
+### GA4 속성 ID 확인
+
+1. [Google Analytics](https://analytics.google.com) 접속
+2. 왼쪽 하단 **관리(톱니바퀴)** → **속성 설정**
+3. 상단에 표시된 숫자가 **속성 ID** (예: `417304962`)
 
 ## 설치 및 실행
 
@@ -73,7 +80,7 @@ npx -y @dongsik/ga4-mcp
   "mcpServers": {
     "ga": {
       "command": "npx",
-      "args": ["-y", "@dongsik/ga4-mcp"],
+      "args": ["--package=@dongsik/ga4-mcp", "ga4-mcp"],
       "env": {
         "GA_CLIENT_SECRET_PATH": "/path/to/client_secret.json",
         "GA4_PROPERTY_ID": "123456789"
@@ -88,13 +95,13 @@ npx -y @dongsik/ga4-mcp
 ### Claude Code (CLI)
 
 ```bash
-claude mcp add ga4 -- npx -y @dongsik/ga4-mcp
+claude mcp add ga4 -- npx --package=@dongsik/ga4-mcp ga4-mcp
 ```
 
 환경변수 설정:
 
 ```bash
-claude mcp add ga4 -e GA_CLIENT_SECRET_PATH=/path/to/client_secret.json -e GA4_PROPERTY_ID=123456789 -- npx -y @dongsik/ga4-mcp
+claude mcp add ga4 -e GA_CLIENT_SECRET_PATH=/path/to/client_secret.json -e GA4_PROPERTY_ID=123456789 -- npx --package=@dongsik/ga4-mcp ga4-mcp
 ```
 
 ### 환경변수

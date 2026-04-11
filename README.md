@@ -59,8 +59,15 @@ npx -y @dongsik/ga4-mcp
 1. Create or select a project in [Google Cloud Console](https://console.cloud.google.com/)
 2. **APIs & Services → Library** → Enable "Google Analytics Data API"
 3. **APIs & Services → Library** → Enable "Google Analytics Admin API"
-4. **APIs & Services → Credentials** → Create **OAuth 2.0 Client ID** (type: Desktop app)
-5. Download the JSON file and save as `client_secret.json`
+4. **APIs & Services → OAuth consent screen** → Set User Type to **External**, add your Google account as a test user
+5. **APIs & Services → Credentials** → Create **OAuth 2.0 Client ID** (type: Desktop app)
+6. Download the JSON file → this is your `client_secret.json`
+
+### Find your GA4 Property ID
+
+1. Go to [Google Analytics](https://analytics.google.com)
+2. Bottom left **Admin (gear icon)** → **Property Settings**
+3. Your **Property ID** is the numeric ID shown at the top (e.g. `417304962`)
 
 ## Installation
 
@@ -73,7 +80,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "ga": {
       "command": "npx",
-      "args": ["-y", "@dongsik/ga4-mcp"],
+      "args": ["--package=@dongsik/ga4-mcp", "ga4-mcp"],
       "env": {
         "GA_CLIENT_SECRET_PATH": "/path/to/client_secret.json",
         "GA4_PROPERTY_ID": "123456789"
@@ -88,13 +95,13 @@ Add to your `claude_desktop_config.json`:
 ### Claude Code (CLI)
 
 ```bash
-claude mcp add ga4 -- npx -y @dongsik/ga4-mcp
+claude mcp add ga4 -- npx --package=@dongsik/ga4-mcp ga4-mcp
 ```
 
 Set environment variables:
 
 ```bash
-claude mcp add ga4 -e GA_CLIENT_SECRET_PATH=/path/to/client_secret.json -e GA4_PROPERTY_ID=123456789 -- npx -y @dongsik/ga4-mcp
+claude mcp add ga4 -e GA_CLIENT_SECRET_PATH=/path/to/client_secret.json -e GA4_PROPERTY_ID=123456789 -- npx --package=@dongsik/ga4-mcp ga4-mcp
 ```
 
 ### Environment Variables
